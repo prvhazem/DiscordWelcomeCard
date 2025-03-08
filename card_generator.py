@@ -19,6 +19,8 @@ def download_image(url, default_size=(255, 255)):
 
 def generate_welcome_card(avatar_url):
     try:
+        # Debugging: Check the received avatar URL
+        print(f"Avatar URL received: {avatar_url}")
         if not avatar_url or not avatar_url.startswith("http"):
             logger.error(f"Invalid avatar URL: {avatar_url}")
             return None
@@ -35,7 +37,7 @@ def generate_welcome_card(avatar_url):
         ImageDraw.Draw(mask).ellipse((0, 0, avatar_size, avatar_size), fill=255)
         avatar.putalpha(mask)
 
-        avatar_pos = (int(47.59), int(27.00))  # Convert float to int
+        avatar_pos = (48, 27)  # Ensure integer values
         background.paste(avatar, avatar_pos, avatar)
 
         temp_dir = os.path.join(os.getcwd(), "static")
