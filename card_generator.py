@@ -17,13 +17,13 @@ def generate_welcome_card(avatar_url):
     try:
         bg_width,bg_height=847,422
         background=download_image(BACKGROUND_URL,default_size=(bg_width,bg_height)).resize((bg_width,bg_height))
-        avatar_size=255
+        avatar_size=400
         avatar=download_image(avatar_url,default_size=(avatar_size,avatar_size)).resize((avatar_size,avatar_size))
         if avatar.mode!="RGBA":avatar=avatar.convert("RGBA")
         mask=Image.new("L",(avatar_size,avatar_size),0)
         ImageDraw.Draw(mask).ellipse((0,0,avatar_size,avatar_size),fill=255)
         avatar.putalpha(mask)
-        avatar_pos=((bg_width-avatar_size)//2,64+(200-avatar_size)//2)
+        avatar_pos = (100, 150)
         background.paste(avatar,avatar_pos,avatar)
         temp_dir=os.path.join(os.getcwd(),"static")
         os.makedirs(temp_dir,exist_ok=True)
