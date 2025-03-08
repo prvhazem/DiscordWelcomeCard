@@ -28,7 +28,7 @@ def generate_welcome_card(avatar_url):
         bg_width, bg_height = 847, 422
         background = download_image(BACKGROUND_URL, default_size=(bg_width, bg_height)).resize((bg_width, bg_height))
 
-        avatar_size = 340
+        avatar_size = 300
         avatar = download_image(avatar_url, default_size=(avatar_size, avatar_size)).resize((avatar_size, avatar_size))
         if avatar.mode != "RGBA":
             avatar = avatar.convert("RGBA")
@@ -37,7 +37,7 @@ def generate_welcome_card(avatar_url):
         ImageDraw.Draw(mask).ellipse((0, 0, avatar_size, avatar_size), fill=255)
         avatar.putalpha(mask)
 
-        avatar_pos = (65, 37)
+        avatar_pos = (70, 40)
         background.paste(avatar, avatar_pos, avatar)
 
         temp_dir = os.path.join(os.getcwd(), "static")
