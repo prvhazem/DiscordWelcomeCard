@@ -37,7 +37,7 @@ def generate_welcome_card(avatar_url):
         ImageDraw.Draw(mask).ellipse((0, 0, avatar_size, avatar_size), fill=255)
         avatar.putalpha(mask)
 
-        avatar_pos = (70, 40)
+        avatar_pos = (75, 45)
         background.paste(avatar, avatar_pos, avatar)
 
         temp_dir = os.path.join(os.getcwd(), "static")
