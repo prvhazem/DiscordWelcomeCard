@@ -15,7 +15,7 @@ def download_image(url,default_size=(255,255)):
         return Image.new("RGBA",default_size,(200,200,200,255))
 def generate_welcome_card(avatar_url):
     try:
-        bg_width,bg_height=849,1085
+        bg_width,bg_height=847,422
         background=download_image(BACKGROUND_URL,default_size=(bg_width,bg_height)).resize((bg_width,bg_height))
         avatar_size=255
         avatar=download_image(avatar_url,default_size=(avatar_size,avatar_size)).resize((avatar_size,avatar_size))
