@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 logging.basicConfig(level=logging.DEBUG)
 logger=logging.getLogger(__name__)
-BACKGROUND_URL="https://raw.githubusercontent.com/The-fouda/welcomecard/refs/heads/main/welcome2.png"
+BACKGROUND_URL="https://raw.githubusercontent.com/The-fouda/welcomecard/refs/heads/main/Untitleds-2.png"
 def download_image(url,default_size=(255,255)):
     try:
         response=requests.get(url,stream=True,timeout=5)
